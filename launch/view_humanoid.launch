@@ -1,11 +1,9 @@
 <launch>
   <arg name="gui"  default="false"/>  
-  <arg name="rviz"  default="false"/>  
+  <arg name="rviz"  default="true"/>  
 
-  <param name="robot_description"
-    command="$(find xacro)/xacro --inorder '$(find humanoid-robot)/urdf/humanoid.xacro'" />
+  <include file="$(find humanoid-robot)/launch/humanoid_upload.launch"/>
 
-  <!-- send fake joint values -->
   <group if="$(arg gui)">
     <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/>
   </group>
@@ -24,7 +22,7 @@
   <!-- Show in Rviz   -->
 
   <group if="$(arg rviz)">
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find humanoid-robot)/launch/humanoid-description.rviz"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find humanoid-robot)/rviz/rviz.rviz"/>
   </group>
 
 </launch>
