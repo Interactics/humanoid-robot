@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <robot name="robot"  xmlns:xacro="http://www.ros.org/wiki/xacro">
-
+  <xacro:arg name="self_collide" default="False"/>
 
 
  <!-- ros_control plugin -->
@@ -14,42 +14,52 @@
 
 <!-- Robot Link -->
   <gazebo reference="body_link1">
+    <selfCollide>False</selfCollide>
     <material>Gazebo/Orange</material>
   </gazebo>
 
   <gazebo reference="body_link2">
+    <selfCollide>False</selfCollide>
     <material>Gazebo/Orange</material>
   </gazebo>
 
   <gazebo reference="left_shoulder">
+    <selfCollide>False</selfCollide>
     <material>Gazebo/Orange</material>
   </gazebo>
 
   <gazebo reference="left_arm">
+    <selfCollide>False</selfCollide>
     <material>Gazebo/Black</material>
   </gazebo>
 
   <gazebo reference="left_forearm">
+    <selfCollide>False</selfCollide>
     <material>Gazebo/Black</material>
   </gazebo>
 
   <gazebo reference="left_hand">
+    <selfCollide>False</selfCollide>
     <material>Gazebo/Blue</material>
   </gazebo>
 
   <gazebo reference="right_shoulder">
+    <selfCollide>False</selfCollide>
     <material>Gazebo/Orange</material>
   </gazebo>
 
   <gazebo reference="right_arm">
+    <selfCollide>False</selfCollide>
     <material>Gazebo/Black</material>
   </gazebo>
 
   <gazebo reference="right_forearm">
+    <selfCollide>False</selfCollide>
     <material>Gazebo/Black</material>
   </gazebo>
 
   <gazebo reference="right_hand">
+    <selfCollide>False</selfCollide>
     <material>Gazebo/Blue</material>
   </gazebo>
 
