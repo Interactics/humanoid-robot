@@ -120,6 +120,55 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        body_link1:
+          Value: true
+        body_link2:
+          Value: true
+        left_arm:
+          Value: true
+        left_forearm:
+          Value: true
+        left_hand:
+          Value: true
+        left_shoulder:
+          Value: true
+        right_arm:
+          Value: true
+        right_forearm:
+          Value: true
+        right_hand:
+          Value: true
+        right_shoulder:
+          Value: true
+        world:
+          Value: true
+      Marker Alpha: 1
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        world:
+          body_link1:
+            body_link2:
+              left_shoulder:
+                left_arm:
+                  left_forearm:
+                    left_hand:
+                      {}
+              right_shoulder:
+                right_arm:
+                  right_forearm:
+                    right_hand:
+                      {}
+      Update Interval: 0
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 238; 238; 238
@@ -164,9 +213,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.08539827913045883
+      Pitch: -0.2646016776561737
       Target Frame: <Fixed Frame>
-      Yaw: 0.6703982949256897
+      Yaw: 0.2053983360528946
     Saved: ~
 Window Geometry:
   Displays:

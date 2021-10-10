@@ -177,30 +177,31 @@
     </inertial>
   </link>
 
-  <joint name="left_hand_joint" type="fixed">
+  <joint name="left_hand_joint" type="revolute">
     <parent link="left_forearm"/>
     <child link="left_hand"/>
-    <origin xyz="0 0 0.1" rpy="0 0  0"/>
-    <axis xyz="0 0 0"/>
+    <origin xyz="0 0 0.2" rpy="0 0  0"/>
+  	<limit effort="300" velocity="3" lower="-3.14" upper="3.14"/>
+    <axis xyz="0 0 1"/>
     <dynamics damping="0.7"/>
   </joint>
 
 `  <link name="left_hand">
      <collision>
-      <origin xyz="0 0 0.1" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
     	  <sphere radius="0.03" />
       </geometry>
     </collision>
     <visual>
-      <origin xyz="0 0 0.1" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
           <sphere radius="0.03" />
       </geometry>
       <material name="blue"/>
     </visual>
     <inertial>
-      <origin xyz="0 0 0.1" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="${mass}"/>
       <inertia
 	  ixx="${mass / 12.0 * (body_width*body_width + body_height1*body_height1)}" ixy="0.0" ixz="0.0"
@@ -307,30 +308,33 @@
     </inertial>
   </link>
 
-  <joint name="right_hand_joint" type="fixed">
+  <joint name="right_hand_joint" type="revolute">
     <parent link="right_forearm"/>
     <child link="right_hand"/>
-    <origin xyz="0 0 0.1" rpy="0 0  0"/>
-    <axis xyz="0 0 0"/>
+    <origin xyz="0 0 0.2" rpy="0 0  0"/>
+  	<limit effort="300" velocity="3" lower="-3.14" upper="3.14"/>
+    <axis xyz="0 0 1"/>
     <dynamics damping="0.7"/>
   </joint>
 
-`  <link name="right_hand">
+
+
+  <link name="right_hand">
      <collision>
-      <origin xyz="0 0 0.1" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
     	  <sphere radius="0.03" />
       </geometry>
     </collision>
     <visual>
-      <origin xyz="0 0 0.1" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
           <sphere radius="0.03" />
       </geometry>
       <material name="blue"/>
     </visual>
     <inertial>
-      <origin xyz="0 0 0.1" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="${mass}"/>
       <inertia
 	  ixx="${mass / 12.0 * (body_width*body_width + body_height1*body_height1)}" ixy="0.0" ixz="0.0"
