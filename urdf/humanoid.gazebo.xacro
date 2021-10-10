@@ -2,50 +2,12 @@
 
 <robot name="robot"  xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <!-- include -->   
-  <xacro:include filename="$(find humanoid-robot)/urdf/humanoid.xacro" />
 
- <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/left_shoulder_joint1</robotNamespace>
-      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
-    </plugin>
-  </gazebo>
 
  <!-- ros_control plugin -->
-  <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/right_shoulder_joint2</robotNamespace>
-      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
-    </plugin>
-  </gazebo>
-
-  <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/right_elbow_joint</robotNamespace>
-      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
-    </plugin>
-  </gazebo>
-
-
  <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/right_shoulder_joint1</robotNamespace>
-      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
-    </plugin>
-  </gazebo>
-
- <!-- ros_control plugin -->
-  <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/left_shoulder_joint2</robotNamespace>
-      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
-    </plugin>
-  </gazebo>
-
-  <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/left_elbow_joint</robotNamespace>
+      <robotNamespace>/robot</robotNamespace>
       <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
     </plugin>
   </gazebo>

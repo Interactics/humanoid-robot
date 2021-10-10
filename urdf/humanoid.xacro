@@ -9,11 +9,9 @@
   <xacro:property name="height2" value="1" /> <!-- Link 2 -->
   <xacro:property name="axel_offset" value="0.05" /> <!-- Space btw top of beam and the each joint -->
 
-<!--  <xacro:include filename="$(find two_link)/urdf/two_link.gazebo" />
--->
- <xacro:include filename="$(find two_link)/urdf/materials.xacro" />
-
-
+  <xacro:include filename="$(find humanoid-robot)/urdf/humanoid.gazebo.xacro" />
+ <xacro:include filename="$(find humanoid-robot)/urdf/materials.xacro" />
+   
   <link name="world"/>
 
   <joint name="fixed" type="fixed">
@@ -118,7 +116,7 @@
     <dynamics damping="0.7"/>
   </joint>
 
-`  <link name="left_arm">
+  <link name="left_arm">
      <collision>
       <origin xyz="0 0 0.1" rpy="0 0 0"/>
       <geometry>
@@ -153,7 +151,7 @@
     <dynamics damping="0.7"/>
   </joint>
 
-`  <link name="left_forearm">
+  <link name="left_forearm">
      <collision>
       <origin xyz="0 0 0.1" rpy="0 0 0"/>
       <geometry>
@@ -186,7 +184,7 @@
     <dynamics damping="0.7"/>
   </joint>
 
-`  <link name="left_hand">
+  <link name="left_hand">
      <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -284,7 +282,7 @@
     <dynamics damping="0.7"/>
   </joint>
 
-`  <link name="right_forearm">
+  <link name="right_forearm">
      <collision>
       <origin xyz="0 0 0.1" rpy="0 0 0"/>
       <geometry>
@@ -342,5 +340,98 @@
 	  izz="${mass / 12.0 * (body_width*body_width + body_width*body_width)}"/>
     </inertial>
   </link>
+
+
+  <!--transmissions-->
+  <!--left-->
+
+  <transmission name="ltran1">
+      <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="left_shoulder_joint1">
+	      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+	  <actuator name="left_motor1">
+	      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+  </transmission>
+
+  <transmission name="ltran2">
+	  <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="left_shoulder_joint2">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+	  <actuator name="left_motor2">
+	      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+  </transmission>
+
+  <transmission name="ltran3">
+      <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="left_elbow_joint">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+	  <actuator name="left_motor3">
+	      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+  </transmission>
+
+  <transmission name="ltran4">
+      <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="left_hand_joint">
+	      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+	  <actuator name="left_motor4">
+	      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+  </transmission>
+
+
+  <transmission name="rtran1">
+      <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="right_shoulder_joint1">
+	      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+	  <actuator name="right_motor1">
+	      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+  </transmission>
+
+  <transmission name="rtran2">
+	  <type>transmission_interface/SimpleTransmission</type>
+	      <joint name="right_shoulder_joint2">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+	  <actuator name="right_motor2">
+	      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+  </transmission>
+
+  <transmission name="rtran3">
+      <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="right_elbow_joint">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+	  <actuator name="right_motor3">
+	      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+  </transmission>
+
+  <transmission name="rtran4">
+      <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="right_hand_joint">
+	      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+	  <actuator name="right_motor4">
+	      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+  </transmission>
 
 </robot>
