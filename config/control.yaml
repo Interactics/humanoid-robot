@@ -10,40 +10,42 @@ robot:
   left_shoulder_joint1_position_controller:
     type: position_controllers/JointPositionController
     joint: left_shoulder_joint1
-    pid: {p: 100.0, i: 0.01, d: 10.0}
 
   left_shoulder_joint2_position_controller:
     type: position_controllers/JointPositionController
     joint: left_shoulder_joint2
-    pid: {p: 100.0, i: 0.01, d: 10.0}
 
   left_elbow_joint_position_controller:
     type: position_controllers/JointPositionController
     joint: left_elbow_joint
-    pid: {p: 100.0, i: 0.01, d: 10.0}
 
   left_hand_joint_position_controller:
     type: position_controllers/JointPositionController
-    joint: left_shoulder_joint1
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    joint: left_hand_joint
 
   # Right Arm ------------
   right_shoulder_joint1_position_controller:
     type: position_controllers/JointPositionController
     joint: right_shoulder_joint1
-    pid: {p: 100.0, i: 0.01, d: 10.0}
 
   right_shoulder_joint2_position_controller:
     type: position_controllers/JointPositionController
     joint: right_shoulder_joint2
-    pid: {p: 100.0, i: 0.01, d: 10.0}
 
   right_elbow_joint_position_controller:
     type: position_controllers/JointPositionController
     joint: right_elbow_joint
-    pid: {p: 100.0, i: 0.01, d: 10.0}
 
   right_hand_joint_position_controller:
     type: position_controllers/JointPositionController
-    joint: right_shoulder_joint1
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    joint: right_hand_joint
+
+  gazebo_ros_control/pid_gains:   
+    left_shoulder_joint1: {p: 50.0, i: 0.1, d: 1.0}
+    left_shoulder_joint2: {p: 50.0, i: 0.1, d: 1.0}
+    left_elbow_joint: {p: 50.0, i: 0.1, d: 1.0}
+    left_hand_joint: {p: 50.0, i: 0.1, d: 1.0}
+    right_shoulder_joint1: {p: 50.0, i: 0.1, d: 1.0}
+    right_shoulder_joint2: {p: 50.0, i: 0.1, d: 1.0}
+    right_elbow_joint: {p: 50.0, i: 0.1, d: 1.0}
+    right_hand_joint: {p: 50.0, i: 0.1, d: 1.0}

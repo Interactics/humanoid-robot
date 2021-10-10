@@ -10,7 +10,7 @@
   <xacro:property name="axel_offset" value="0.05" /> <!-- Space btw top of beam and the each joint -->
 
   <xacro:include filename="$(find humanoid-robot)/urdf/humanoid.gazebo.xacro" />
- <xacro:include filename="$(find humanoid-robot)/urdf/materials.xacro" />
+  <xacro:include filename="$(find humanoid-robot)/urdf/materials.xacro" />
    
   <link name="world"/>
 
